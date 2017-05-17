@@ -121,6 +121,9 @@ int main(int argc, char **argv)
 		{
 			sendto(sock, buffer, len, 0, config->group->ai_addr, 
 			       config->group->ai_addrlen);
+			if(config->echo == 1){
+				fwrite(buffer, len, 1, stdout);
+			}
 		}
 	}
 	

@@ -85,6 +85,7 @@ struct mnc_configuration * parse_arguments(int argc, char **argv)
 	config.port 	= MNC_DEFAULT_PORT;
 	config.iface	= NULL;
 	config.source	= NULL;
+	config.echo = 0;
 
 	/* Loop through the arguments */
 	for (optind = 1; optind < (argc - 1); optind++)
@@ -105,6 +106,8 @@ struct mnc_configuration * parse_arguments(int argc, char **argv)
 				case 'i':	config.iface = argv[++optind];
 						break;
 
+				case 'e':	config.echo = 1;
+						break;
 				/* Unrecognised option */
 				default:	usage();
 						break;

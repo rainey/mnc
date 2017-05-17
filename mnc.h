@@ -74,6 +74,8 @@ struct mnc_configuration
 	
 	/* An interface index for listening */
 	char	*		iface;
+
+	short int		 echo;
 };
 
 
